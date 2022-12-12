@@ -1,9 +1,8 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import { Header, List, Item, Link } from './Layout.styled';
 
 
-
-import { Header, List, Item, StyledLink, LoadingWrap } from './Layout.styled';
 
 const Layout = () => {
   return (
@@ -12,21 +11,16 @@ const Layout = () => {
         <nav>
           <List>
             <Item>
-              <StyledLink to="/">Home</StyledLink>
+              <Link to="/">Home</Link>
             </Item>
             <Item>
-              <StyledLink to="movies">Movies</StyledLink>
+              <Link to="movies">Movies</Link>
             </Item>
           </List>
         </nav>
       </Header>
-      <Suspense
-        fallback={
-          <LoadingWrap>
-            
-          </LoadingWrap>
-        }
-      >
+      <Suspense      
+          fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
     </div>

@@ -1,11 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
-import { TbMessageCircle } from 'react-icons/tb';
-import { TfiFaceSad } from 'react-icons/tfi';
-
-import getMovies from 'API/getMovies';
-
+import getMovies from 'Api/api';
 import { List, Item, Text, Title } from '../Reviews/Reviews.styled';
 
 const Reviews = () => {
@@ -25,7 +20,6 @@ const Reviews = () => {
           return (
             <Item key={id}>
               <Title>
-                <TbMessageCircle size={20} color={'#615049'} />
                 Author: {author}
               </Title>
               <Text>{content}</Text>
@@ -33,8 +27,7 @@ const Reviews = () => {
           );
         })
       ) : (
-        <Title>
-          <TfiFaceSad size={20} />
+        <Title>         
           Sorry, we don't have any reviews for this movie
         </Title>
       )}

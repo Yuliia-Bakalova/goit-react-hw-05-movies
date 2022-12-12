@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
-
-import { List, Image, Item, StyledLink } from './MovieList.styled';
+import { List, Image, Item, Link } from './MovieList.styled';
 
 const MovieList = ({ movies, location }) => {
   return (
@@ -8,13 +7,13 @@ const MovieList = ({ movies, location }) => {
       {movies.map(({ title, id, poster_path }) => {
         return (
           <Item key={id}>
-            <StyledLink to={`/movies/${id}`} state={{ from: location }}>
+            <Link to={`/movies/${id}`} state={{ from: location }}>
               <Image
                 src={`https://image.tmdb.org/t/p/w200${poster_path}`}
                 alt={title}
               />
               {title}
-            </StyledLink>
+            </Link>
           </Item>
         );
       })}

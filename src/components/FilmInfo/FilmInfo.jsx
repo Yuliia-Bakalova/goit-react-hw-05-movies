@@ -1,3 +1,4 @@
+
 import PropTypes from 'prop-types';
 
 import {
@@ -7,9 +8,10 @@ import {
   Img,
   Text,
   Title,
-} from './MovieDetails.styled';
+  Wrap,
+} from './FilmInfo.styled';
 
-const GeneralFilmInfo = ({ filmDetails }) => {
+const FilmInfo = ({ filmDetails }) => {
   const {
     poster_path,
     original_title,
@@ -28,7 +30,9 @@ const GeneralFilmInfo = ({ filmDetails }) => {
           {original_title} ({date})
         </MovieName>
         <Text>
-         
+          <Wrap>
+          
+          </Wrap>
           User score: {Math.round(vote_average * 10)}%
         </Text>
         <Title>Genres</Title>
@@ -36,7 +40,9 @@ const GeneralFilmInfo = ({ filmDetails }) => {
           ? genres.map(genre => {
               return (
                 <Text key={genre.id}>
-        
+                  {/* <Wrap>
+                  
+                  </Wrap> */}
                   {genre.name}
                 </Text>
               );
@@ -49,7 +55,7 @@ const GeneralFilmInfo = ({ filmDetails }) => {
   );
 };
 
-GeneralFilmInfo.propTypes = {
+FilmInfo.propTypes = {
   filmDetails: PropTypes.shape({
     poster_path: PropTypes.string,
     title: PropTypes.string,
@@ -61,4 +67,4 @@ GeneralFilmInfo.propTypes = {
   }),
 };
 
-export default GeneralFilmInfo;
+export default FilmInfo;

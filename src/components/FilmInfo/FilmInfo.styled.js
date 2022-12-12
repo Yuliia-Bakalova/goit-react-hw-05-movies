@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 const Section = styled.section`
   display: flex;
@@ -16,19 +16,21 @@ const Container = styled.div`
   justify-content: start;
   padding: 15px;
   padding-top: 0;
-  font-family: ${p => p.theme.font.main};
-  color: ${p => p.theme.color.secondBg};
+font-family: "Gill Sans", sans-serif; 
+  color: #000;
 `;
 const MovieName = styled.h1`
-  color: ${p => p.theme.color.accent};
-  font-size: 45px;
+  color: #3c3a5e;
+  font-size: 50px;
   margin-bottom: 40px;
-  font-family: ${p => p.theme.font.marker};
+font-family: "Gill Sans", sans-serif;
+
+    
 `;
 const Title = styled.h2`
   margin-top: 20px;
   margin-bottom: 5px;
-  font-family: ${p => p.theme.font.marker};
+  font-family: "Gill Sans", sans-serif;
   font-size: 30px;
 `;
 const Text = styled.p`
@@ -38,7 +40,7 @@ const Text = styled.p`
 
 const Wrap = styled.span`
   margin-right: 5px;
-  height: 25px;
+  height: 30px;
 `;
 
 export { Container, Img, Section, MovieName, Text, Title, Wrap };

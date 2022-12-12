@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+
+import styled from '@emotion/styled';
 
 const Header = styled.header`
-  box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.75);
-  background-color: ${p => p.theme.color.secondBg};
+  box-shadow: 0px 9px 20px 0px rgba(0, 0, 0, 0.75);
+  background-color: #616161;
   padding: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `;
 
 const Navigation = styled.nav``;
@@ -17,19 +18,20 @@ const Item = styled.li`
     margin-right: 30px;
   }
 `;
-const StyledLink = styled(NavLink)`
-  color: ${p => p.theme.color.text};
-  text-decoration: none;
-  font-family: ${p => p.theme.font.marker};
+const Link = styled(NavLink)`
+  color: #fff;
+  
+  font-family: "Gill Sans", sans-serif;
   padding: 8px 16px;
   border-radius: 4px;
-  transition: ${p => p.theme.transition};
+  transition: all 250ms linear 0s;
   :hover {
-    color: ${p => p.theme.color.accent};
+    color: red;
   }
+
   &.active {
-    background-color: ${p => p.theme.color.accent};
-    color: ${p => p.theme.color.text};
+    background-color: #7d77e8;
+    color:  #032147;
   }
 `;
 
@@ -40,4 +42,4 @@ const LoadingWrap = styled.div`
   height: 100vh;
 `;
 
-export { Header, Navigation, List, Item, StyledLink, LoadingWrap };
+export { Header, Navigation, List, Item, Link, LoadingWrap };
